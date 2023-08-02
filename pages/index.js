@@ -29,7 +29,7 @@ export default function Home({courses}) {
 }
 
 export async function getServerSideProps(){
-    const {data} = await axios.get(`http://localhost:8000/api/v1/courses`);
+    const {data} = await axios.get(`http://128.199.30.226/api/v1/courses`);
     return {
         props: {
             courses: data

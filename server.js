@@ -15,7 +15,7 @@ app
       server.use(
         "/api/v1",
         createProxyMiddleware({
-          target: "http://localhost:8000",
+          target: "http://128.199.30.226",
           // target: "https://lms-f38z.onrender.com",
           changeOrigin: true,
         })
