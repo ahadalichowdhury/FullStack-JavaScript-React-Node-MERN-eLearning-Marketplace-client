@@ -130,7 +130,7 @@ const singleCourse = ({course}) => {
 }
 
 export async function getServerSideProps ({query}){
-    const {data} = await axios.get(`http://localhost:8000/api/v1/course/${query.slug}`);
+    const {data} = await axios.get(`http://128.199.30.226/api/v1/course/${query.slug}`);
     return {
         props: {
             course: data
