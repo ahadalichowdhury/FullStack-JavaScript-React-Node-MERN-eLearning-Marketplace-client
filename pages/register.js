@@ -28,9 +28,13 @@ export default function register() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // console.log(name, email, password);
-    if (name === "" || email === "" || password === "") {
-      toast.error("All fields are required");
-    } else if (password.length < 6) {
+    const emailRegex = /^[a-zA-Z0-9._-]+@gmail\.com$/;
+
+  if (name === "" || email === "" || password === "") {
+    toast.error("All fields are required");
+  } else if (!emailRegex.test(email)) {
+    toast.error("Please enter a valid Gmail address");
+  } else if (password.length < 6) {
       toast.error("Password must be at least 6 characters");
     } else {
       setLoading(true);
